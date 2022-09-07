@@ -1,7 +1,8 @@
-namespace SampleIEnumerable.Models;
-
-public class Person
+namespace SampleIEnumerable.Models
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
 }

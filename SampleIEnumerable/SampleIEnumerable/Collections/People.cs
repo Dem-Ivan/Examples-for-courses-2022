@@ -1,19 +1,20 @@
 using System.Collections;
 using SampleIEnumerable.Models;
 
-namespace SampleIEnumerable.Collections;
-
-public class People : IEnumerable
+namespace SampleIEnumerable.Collections 
 {
-    private Person[] _people { get; set; }
-
-    public People(Person[] people)
+    public class People : IEnumerable
     {
-        _people = people;
-    }
+        private Person[] _people { get; set; }
 
-    public IEnumerator GetEnumerator()
-    {
-        return new PeopleEnumerator(_people);
+        public People(Person[] people)
+        {
+            _people = people;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return new PeopleEnumerator(_people);
+        }
     }
 }

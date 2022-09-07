@@ -1,64 +1,54 @@
+using System;
 using System.Collections;
 using SampleIEnumerable.Models;
 
-namespace SampleIEnumerable.Collections;
-
-public class PeopleEnumerator : IEnumerator
+namespace SampleIEnumerable.Collections
 {
-    private readonly Person[] _people;
-    private int _position = -1;
-
-    public PeopleEnumerator(Person[] people)
+    public class PeopleEnumerator : IEnumerator
     {
-        _people = people;
-    }
+        private readonly Person[] _people;
+        private int _position = -1;
 
-
-    // Получение того элемента коллекции, на который в данный момент указывает указатель
-    public object Current
-    {
-        get
+        public PeopleEnumerator(Person[] people)
         {
-            Console.WriteLine("Called method get current person");
-
-            if (_position == -1 || _position >= _people.Length)
-                throw new ArgumentException();
-
-            var currentPerson = _people[_position];
-
-            Console.WriteLine($"Current person is {currentPerson.FirstName} {currentPerson.LastName}");
-
-            return currentPerson;
+            _people = people;
         }
-    }
 
-    // Перевод указательня на следующую позицию. Метод возвращает false, если операция не была выполнена. 
-    // Например: Закончилась коллекция, следующего элемента не существует. 
-    public bool MoveNext()
-    {
-        Console.WriteLine("Called method MoveNext");
 
-        if (_position < _people.Length - 1)
+        // Получение того элемента коллекции, на который в данный момент указывает указатель
+        public object Current
         {
-            _position++;
+            get
+            {
+                if (_position == -1 || _position >= _people.Length)
+                    throw new ArgumentException();
 
-            Console.WriteLine($"Current position is {_position}");
+                var currentPerson = _people[_position];
 
-            return true;
+                return currentPerson;
+            }
         }
-        else
+
+        // Перевод указательня на следующую позицию. Метод возвращает false, если операция не была выполнена. 
+        // Например: Закончилась коллекция, следующего элемента не существует. 
+        public bool MoveNext()
         {
-            Console.WriteLine("Collection items are over");
-            return false;
-        }
-    }
+            if (_position < _people.Length - 1)
+            {
+                _position++;
 
-    // Обнуление позиции указателя
-    public void Reset()
-    {
-        Console.WriteLine("Called method Reset");
-        Console.WriteLine("position = -1");
-        
-        _position = -1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // Обнуление позиции указателя
+        public void Reset()
+        {
+            _position = -1;
+        }
     }
 }
