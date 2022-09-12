@@ -88,7 +88,7 @@ namespace GenericType_GenericMember
             };
 
             notificationService.SendBonusAnons(cristyna);
-            //notificationService.SendBonusAnons(olga);
+            notificationService.SendBonusAnons(olga);
         }       
     }
 }
