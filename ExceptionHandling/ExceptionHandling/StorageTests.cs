@@ -19,17 +19,17 @@ namespace ExceptionHandling
                 Number = 333
             };
 
-            playerStorage.AddClient(olga);//1
+            //playerStorage.AddClient(olga);//1
 
-            //try//2
-            //{
-            //   playerStorage.AddClient(olga);
-            //}
-            //catch (NumberRestrictionException e)
-            //{
-            //    Assert.Equal("Номер игрока обязательен для заполнения", e.Message);
-            //    Assert.Equal(typeof(NumberRestrictionException), e.GetType());
-            //}
+            try//2
+            {
+                playerStorage.AddClient(olga);
+            }
+            catch (NumberRestrictionException e)
+            {
+                Assert.Equal("Номер игрока обязательен для заполнения", e.Message);
+                Assert.Equal(typeof(NumberRestrictionException), e.GetType());
+            }
             //catch (Exception e)
             //{
             //    Assert.True(false);

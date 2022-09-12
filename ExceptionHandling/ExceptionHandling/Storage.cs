@@ -12,10 +12,10 @@ namespace ExceptionHandling
 
         public void AddClient(Player player)
         {
-            //if (player.Name == null)//3
-            //{
-            //    throw new ArgumentNullException("Имя игрока обязательно для заполнения");
-            //}
+            if (player.Name == null)//3
+            {
+                throw new ArgumentNullException("Имя игрока обязательно для заполнения");
+            }
 
             if (player.Number == 0)
             {
