@@ -41,5 +41,21 @@ namespace SampleIEnumerable.Tests
                 Console.WriteLine(man.ToString());
             }
         }
+
+        [Fact]
+        public void DemonstrationLazyLoading()
+        {
+            //Arrange
+            var random = new Random();
+            var numArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            var randomNumFiltered = numArray.Where(u => u == random.Next(1, 9));
+
+            //Act
+            var firstNum = randomNumFiltered.FirstOrDefault();
+            var secondNum = randomNumFiltered.FirstOrDefault();
+
+            //Assert
+            Assert.Equal(firstNum, secondNum);
+        }
     }
 }
