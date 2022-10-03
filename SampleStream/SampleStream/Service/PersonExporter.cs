@@ -27,7 +27,7 @@ namespace SampleStream.Service
 
             using (FileStream fileStream = new FileStream(fullPath, FileMode.OpenOrCreate))
             {
-                using (StreamWriter streamWriter = new StreamWriter(fileStream))
+                using (StreamWriter streamWriter = new StreamWriter(fileStream, System.Text.Encoding.UTF8))
                 {
                     using (var writer = new CsvWriter(streamWriter, CultureInfo.CurrentCulture))
                     {
@@ -52,7 +52,7 @@ namespace SampleStream.Service
             string fullPath = GetFullPathToFile(_pathToDirecory, _csvFileName);
             using (FileStream fileStream = new FileStream(fullPath, FileMode.OpenOrCreate))
             {
-                using (StreamReader streamReader = new StreamReader(fileStream))
+                using (StreamReader streamReader = new StreamReader(fileStream, System.Text.Encoding.UTF8))
                 {
                     using (var reader = new CsvReader(streamReader, CultureInfo.CurrentCulture))
                     {

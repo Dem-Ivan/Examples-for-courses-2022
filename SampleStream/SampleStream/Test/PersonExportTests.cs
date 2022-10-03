@@ -16,7 +16,7 @@ namespace SampleStream.Test
 
             Person person = new Person()
             {
-                Name = "John",
+                Name = "Арсений",
                 Age = 30
             };
 
