@@ -14,19 +14,19 @@
             
             var simpleFactoryRunTask = Task.Factory.StartNew(() => player.Run(10));
 
-            var questTask1 = Task.Factory.StartNew(() => player.DoQuest("Пройти уровень"));
-            var questTask2 = Task.Factory.StartNew(() => player.DoQuest("Победить босса"));
-            var questTask3 = Task.Factory.StartNew(() => player.DoQuest("Спасти принцессу"));
-            var questTask4 = Task.Factory.StartNew(() => player.DoQuest("Забрать сокровища"));
+            var questTask1 = Task.Factory.StartNew(() => player.DoQuest("Пройти уровень", 10));
+            var questTask2 = Task.Factory.StartNew(() => player.DoQuest("Победить босса", 20));
+            var questTask3 = Task.Factory.StartNew(() => player.DoQuest("Спасти принцессу", 30));
+            var questTask4 = Task.Factory.StartNew(() => player.DoQuest("Забрать сокровища", 40));
             questTask1.Wait();
             questTask2.Wait();
             questTask3.Wait();
             questTask4.Wait();
             
-            var questTaskSync1 = new Task(() => player.DoQuest("Пройти уровень"));
-            var questTaskSync2 = new Task(() => player.DoQuest("Победить босса"));
-            var questTaskSync3 = new Task(() => player.DoQuest("Спасти принцессу"));
-            var questTaskSync4 = new Task(() => player.DoQuest("Забрать сокровища"));
+            var questTaskSync1 = new Task(() => player.DoQuest("Пройти уровень", 10));
+            var questTaskSync2 = new Task(() => player.DoQuest("Победить босса", 20));
+            var questTaskSync3 = new Task(() => player.DoQuest("Спасти принцессу", 30));
+            var questTaskSync4 = new Task(() => player.DoQuest("Забрать сокровища", 40));
             questTaskSync1.RunSynchronously();
             questTaskSync2.RunSynchronously();
             questTaskSync3.RunSynchronously();
