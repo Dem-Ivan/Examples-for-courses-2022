@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplesWithHTTP", "ExamplesWithHTTP\ExamplesWithHTTP.csproj", "{23F2F13C-E297-4EF3-9C30-5E7D112D3A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamplesWithHTTPTests", "ExamplesWithHTTPTests\ExamplesWithHTTPTests.csproj", "{49EB4FA6-5462-4562-BC78-72CA36EFBD39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23F2F13C-E297-4EF3-9C30-5E7D112D3A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F2F13C-E297-4EF3-9C30-5E7D112D3A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F2F13C-E297-4EF3-9C30-5E7D112D3A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F2F13C-E297-4EF3-9C30-5E7D112D3A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49EB4FA6-5462-4562-BC78-72CA36EFBD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EB4FA6-5462-4562-BC78-72CA36EFBD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EB4FA6-5462-4562-BC78-72CA36EFBD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EB4FA6-5462-4562-BC78-72CA36EFBD39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AB54181-06FE-4F67-9A77-38A54FB12354}
+	EndGlobalSection
+EndGlobal
