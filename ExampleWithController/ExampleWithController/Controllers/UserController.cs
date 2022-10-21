@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ExampleWithController.Exceptions;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +12,38 @@ namespace ExampleWithController.Controllers
     public class UserController : ControllerBase
     {
 
-        private List<String> _usersNames = new List<string> { "Nycolas", "Semen"};
+        private List<User> _users = new List<User> { new User {Name = "Semen" }, new User { Name = "Olga"} };
 
         [HttpGet]
-        public List<string> GetUserNames()
+        public ActionResult<List<User>> GetUserNames()
         {
-            return _usersNames;
+            return _users;
         }
 
         [HttpPost]
-        public void AddUserName(string name)
+        public IActionResult AddUserName([FromBody] User user)
+        {            
+            if (_users.Any(u => u.Name == user.Name))
+            {
+                return new BadRequestObjectResult(new AlreadyExistsException($"Пользователь с именем {user.Name} уже зарегистрирован."));
+            }
+           
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser([FromQuery] User user)
         {
-            _usersNames.Add(name); 
+            return Ok();
+            //return new NotFoundResult();
         }
 
         [HttpDelete]
-        public void DeleteUser(string name)
+        public IActionResult DeleteUser(string userName)
         {
-            _usersNames.Remove(name);
+
+            return Ok();
+            //return new NotFoundResult();
         }
     }
 }
