@@ -13,11 +13,18 @@ namespace ExampleWithController.Controllers
     {
 
         private List<User> _users = new List<User> { new User {Name = "Semen" }, new User { Name = "Olga"} };
-
+               
         [HttpGet]
-        public ActionResult<List<User>> GetUserNames()
-        {
-            return _users;
+        public ActionResult<User> GetUserByName(string name)
+        {           
+            var user = _users.FirstOrDefault(u => u.Name == name); 
+
+            if (user != null)
+            {
+                return user;
+            }
+
+            return new NotFoundResult();           
         }
 
         [HttpPost]
